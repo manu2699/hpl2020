@@ -81,7 +81,7 @@ button:disabled {
 input,
 .primaryButton,
 .secButton {
-	margin: 10px 3px;
+	margin: 10px 7px;
 	color: #0000008e;
 	font-size: 1.05rem;
 	width: max-content;
@@ -189,6 +189,13 @@ input[type="number"] {
 		top: 7%;
 		right: 7px;
 		font-size: 1.3em;
+	}
+	.rowWrap button {
+		font-size: 0.93em;
+	}
+	table tr td,
+	table tr th {
+		font-size: 0.9em;
 	}
 }
 .centerPage,

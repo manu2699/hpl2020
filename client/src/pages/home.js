@@ -120,15 +120,15 @@ class Home extends Component {
     switch (param) {
       case 0:
         return (<button className="primaryButton" disabled>
-          To Assign Result : Choose Any 2 Teams
+          To Assign Result <br /> Choose Any 2 Teams
         </button>)
       case 1:
         return (<button className="primaryButton" disabled>
-          To Assign Result : Choose Another Team
+          To Assign Result  <br /> Choose Another Team
         </button>)
       case 2:
         return (<button className="primaryButton" onClick={() => this.setState({ ...this.state, showOverlay: true })}>
-          Assign Result : {this.state.selectedTeams[0].team_name} vs {this.state.selectedTeams[1].team_name}
+          Assign Result <br /> {this.state.selectedTeams[0].team_name} vs {this.state.selectedTeams[1].team_name}
         </button>)
       default:
         return 'foo';
@@ -137,16 +137,19 @@ class Home extends Component {
 
   renderBadge(param) {
     let position = this.state.pageNo * 10 + param;
-    switch (position) {
-      case 1:
-        return (<BiTrophy size="1.4em" />)
-      case 2:
-        return (<BiShield size="1.4em" />)
-      case 3:
-        return (<BiMedal size="1.4em" />)
-      default:
-        return `${this.state.pageNo * 10 + param}`;
+    if (this.state.score) {
+      switch (position) {
+        case 1:
+          return (<BiTrophy size="1.4em" />)
+        case 2:
+          return (<BiShield size="1.4em" />)
+        case 3:
+          return (<BiMedal size="1.4em" />)
+        default:
+          return `${this.state.pageNo * 10 + param}`;
+      }
     }
+    return position
   }
 
   render() {
